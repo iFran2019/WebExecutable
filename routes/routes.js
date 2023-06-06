@@ -6,8 +6,12 @@ router.get("/", (req, res) => {
   return res.render("main");
 });
 
-// adds dogs route
+router.get("/items", (req, res) => {
+  return res.render("items");
+});
 
-// add main route
+router.get("/blocks", (req, res) => {
+  return res.render("blocks");
+});
 
 module.exports = router;
