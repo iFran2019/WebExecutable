@@ -2,34 +2,36 @@
 <html lang="en">
 <%- include("header", { title: "Executable Editor | Items" }) %>
 <center><div style="margin: 30px;padding: 50px; border: 2px solid #3d4346; background: linear-gradient(40deg, #191c20, #3d4346);" class="container-md">
-    <center><h4 style="color: white">Executable Editor (Only Premium Version)</h4></center>
-    <hr style="color: white">
-    <input class="form-control form-control-lg" type="text" placeholder="Item ID">
-    <br>
-    <a style="margin-bottom: 15px;" class="btn btn-primary" data-bs-toggle="collapse" href="#general" role="button" aria-expanded="false" aria-controls="general">General Editor</a>
-    <div class="collapse" id="general">
-        <div class="card card-body" style="background: gray;">
-            <center><h4 style="color: white">Name Editor</h4></center>
-            <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-            <br>
-            <textarea class="form-control" aria-label="With textarea" id="enterdetect" onkeypress="actualize()"></textarea>
+    <form>
+        <center><h4 style="color: white">Executable Editor (Only Premium Version)</h4></center>
+        <hr style="color: white">
+        <input class="form-control form-control-lg" type="text" placeholder="Item ID" name="itemid">
+        <br>
+        <a style="margin-bottom: 15px;" class="btn btn-primary" data-bs-toggle="collapse" href="#general" role="button" aria-expanded="false" aria-controls="general">General Editor</a>
+        <div class="collapse" id="general">
+            <div class="card card-body" style="background: gray;">
+                <center><h4 style="color: white">Name Editor</h4></center>
+                <input class="form-control form-control-lg" type="text" placeholder="Item Name" name="name" id="name" onkeypress="translateColors('name', 'minetip-tooltip', 'Item Name Preview');" oninput="translateColors('name', 'minetip-tooltip', 'Item Name Preview');" onmouseenter="translateColors('name', 'minetip-tooltip', 'Item Name Preview');">
+                <br>
+                <center><h4 style="color: white">Lore Editor</h4></center>
+                <textarea class="form-control" aria-label="With textarea" id="enterdetect" onkeypress="actualize('enterdetect', 'enterdetectext');translateColorsLore('enterdetect', 'minetip-tooltip', '');" oninput="actualize('enterdetect', 'enterdetectext');translateColorsLore('enterdetect', 'minetip-tooltip', 'Item Lore Preview');" onmouseenter="translateColorsLore('enterdetect', 'minetip-tooltip', 'Item Lore Preview');"></textarea>
+                <div style="margin: 10px;display: none;">
+                    <input class="form-control form-control-lg disabled" type="text" placeholder="Display Send" disabled id="enterdetectext" name="lore">
+                </div>
+                <div id="minetip-tooltip" style="display: block;"></div>
+            </div>
         </div>
-    </div>
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-    <br>
-    <input class="form-control form-control-lg" type="text" placeholder="Item Name">
-
+        <br>
+        <input class="form-control form-control-lg" type="text" placeholder="Item Name">
+        <br>
+        <input class="form-control form-control-lg" type="text" placeholder="Item Name">
+        <br>
+        <input class="form-control form-control-lg" type="text" placeholder="Item Name">
+        <br>
+        <input class="form-control form-control-lg" type="text" placeholder="Item Name">
+        <br>
+        <input class="form-control form-control-lg" type="text" placeholder="Item Name">
+    </form>
 </div></center>
 <%- include("footer", {}) %>
 </html>
